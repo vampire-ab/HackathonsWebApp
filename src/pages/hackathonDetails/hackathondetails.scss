@@ -1,0 +1,46 @@
+.hackathondetails{
+  
+  .details{
+    padding: 0px 140px 0px 120px;
+    display: flex;
+    box-shadow: 0px 12px 20px rgb(222, 222, 222);
+    justify-content: flex-end;
+    .overview{
+      margin-right: auto;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 20px;   
+      font-weight: 650;
+      p{
+        padding: 0px 55px;
+        margin-bottom: 0;
+        height: 5px;
+        margin-top: 9px;
+        background-color: green;   
+        border-radius: 3px;
+      }   
+    }
+    .edit{
+      margin: 20px 0px;
+      padding: 4px 20px;
+      margin-right: 20px;
+      text-align: center;
+    }
+    .delete{
+      margin: 20px 0px;
+      padding: 4px 20px;
+      text-align: center;
+    }
+  }
+  .abouthackathon{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 0px 200px 50px 120px;
+    .aboutparagraph{
+      padding-top: 20px;
+      padding-right: 180px;
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "hackathons_list": [
+    {
+      "id": 1,
+      "title": "Data Sprint 72 - Butterfly Identification",
+      "start": "10 Oct'22 09:00:00 PM",
+      "end": "14 Oct'22 11:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/Butterfly.png",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2,
+      "title": "Travel Insurance Claim Prediction",
+      "start": "10 May'22 09:00:00 PM",
+      "end": "16 May'22 09:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/Travel.png",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "title": "Engineering Graduates Employment Outcomes",
+      "start": "10 May'22 09:00:00 PM",
+      "end": "16 May'22 09:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/College.png",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "title": "Data Sprint 70-Airline Passenger Satisfaction",
+      "start": "10 Oct'22 09:00:00 PM",
+      "end": "14 Oct'22 11:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/Airplane.png",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "title": "Data Sprint 71- Weather Recognition",
+      "start": "8 Oct'22 09:00:00 PM",
+      "end": "14 Oct'22 11:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/Snow.png",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "title": "Data Science Bootcamp - Graded Datathon",
+      "start": "8 Oct'22 09:00:00 PM",
+      "end": "14 Oct'22 11:00:00 PM",
+      "description": "Identify the class to which each butterfly belongs to.",
+      "img": "./assets/cardimage/Analysis.png",
+      "difficulty": "Easy"
+    }
+  ]
+}

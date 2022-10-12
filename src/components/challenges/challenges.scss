@@ -1,0 +1,165 @@
+.challenges {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 100px;
+  background-color: #002b3a;
+  padding: 70px 0px 0px 0px;
+  .search {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    p {
+      font-size: 30px;
+      color: white;
+      width: 100vw;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .searchbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .searchbox {
+        margin: 20px;
+        width: 500px;
+      }
+      div {
+        align-items: center;
+        margin: 0;
+        .filterbtn {
+          background-color: #fff;
+          width: 120px;
+          margin-bottom: 0;
+          color: black;
+          border-radius: 10px;
+          font-size: 25px;
+          transition: all 0.3s ease;
+          justify-content: space-between;
+          &.pclicked {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            width: 300px;
+            padding: 2px 4px;
+            border-bottom: 0.5px solid grey;
+          }
+        }
+
+        .options {
+          position: absolute;
+          display: none;
+          list-style: none;
+          padding: 15px;
+          font-size: 20px;
+          margin: 2px;
+          margin-top: 0px;
+          margin-left: 0px;
+          width: 300px;
+          background-color: #fff;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          &.displayOptions {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .hackathons {
+    display: flex;
+    flex-wrap: wrap;
+    background: #003145;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    padding: 80px 0px;
+    .hackathon_card {
+      height: 500px;
+      width: 354px;
+      display: flex;
+      flex-direction: column;
+      margin: 30px;
+      border-radius: 30px;
+      background-color: white;
+      .card_image {
+        height: 175px;
+        
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+      .timeline {
+        margin: 20px 0px 0px 0px;
+        width: 354px;
+        .when {
+          text-align: center;
+          margin-bottom: 0px;
+          font-size: 13px;
+          font-weight: 580;          
+        }
+        .active{
+          background-color: rgb(108, 157, 108);
+          border-radius: 5px;
+          color: green;
+          padding: 2px 0px;
+          margin: 0px 140px;
+          font-weight: normal;
+          text-align: center;
+        }
+        .past {
+          background-color: rgb(255, 72, 139);
+          border-radius: 5px;
+          padding: 2px 0px;
+          margin: 0px 140px;
+          font-weight: normal;
+          text-align: center;
+        }
+        
+        .upcoming{
+          background-color: rgb(188, 188, 107);
+          border-radius: 5px;
+          padding: 2px 0px;
+          margin: 0px 140px;
+          font-size: 12px;
+          font-weight: normal;
+          text-align: center;
+        }
+        .none{
+          display: none;
+        }
+        
+        .date_time {
+          font-size: 15px;   
+          font-weight: normal;       
+        }
+        .show{
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+      .none{
+        display: none;
+      }
+      .hackathon_title {
+        margin: 15px 50px 0px 50px;
+        text-align: center;
+        font-weight: 650;
+        font-size: 18px;
+      }
+      .participate_btn {
+        background-color: rgb(42, 119, 42);
+        border-radius: 10px;
+        text-align: center;
+        margin: 30px 85px;
+        padding: 8px 0px;
+        font-size: 15px;
+        color: white;
+        font-weight: 400;
+        border: 0px;
+      }
+    }
+  }
+}

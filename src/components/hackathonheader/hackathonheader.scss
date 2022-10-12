@@ -1,0 +1,49 @@
+.hackathonheader {
+  background-color: #003145;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 100px 80px 120px;
+  .timedetails {
+    background-color: rgb(255, 183, 0);
+    margin: 10px 0px 10px 0px;
+    align-items: center;
+    width: fit-content;
+    border-radius: 8px;
+    p {
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 5px 30px 5px 22px;
+      margin-bottom: 0;
+    }
+  }
+
+  .hackathontitle {
+    color: white;
+    font-weight: 500;
+    font-size: 50px;
+  }
+  .hackathontask {
+    color: white;
+    margin: 27px 0px 18px 0;
+  }
+  .hackathondifficulty {
+    color: black;
+    background-color: white;
+    margin: 10px 0px;
+    align-items: center;
+    width: fit-content;
+    border-radius: 8px;
+    p {
+      margin-bottom: 0;
+      padding: 8px 20px;
+      font-weight: 550;
+      .skill-level {
+        margin-right: 5px;
+        svg {
+          transform: translate(0px, -3px);
+        }
+      }
+    }
+  }
+}
