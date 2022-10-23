@@ -10,34 +10,31 @@ import CreateChallenge from "./pages/createChallenge/CreateChallenge";
 import dayjs from "dayjs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // npx json-server --watch data/hackathons_list.json --port 8000
-function App() {  
+function App() {
   const [hackathons_list, setHackathons_list] = useState(null);
   const [filterSearch, setFilterSearch] = useState("");
   const [searchedData, setSearchedData] = useState([]);
   const [checkedState, setCheckedState] = useState(new Array(7).fill(false));
-  let listing = hackathons_list;
-  const fetcher = () => {
+  
+  useEffect(() => {
     fetch("http://localhost:8000/hackathons_list")
       .then((res) => {
         return res.json();
       })
-      .then((data) => {        
-        setHackathons_list(data);
+      .then((data) => {
+        data =
+          data ?
+            data.filter((filterlist) => {
+              return (
+                filterlist.title.substring(0, filterSearch.length).toLowerCase() ===
+                filterSearch.toLowerCase()
+              );
+            }) : [];
         setSearchedData(data);
+        setHackathons_list(data);
       });
-  };
-  fetcher();
-  useEffect(() => {
-    listing =
-      listing &&
-      listing.filter((filterlist) => {
-        return (
-          filterlist.title.substring(0, filterSearch.length).toLowerCase() ===
-          filterSearch.toLowerCase()
-        );
-      });
-    setSearchedData(listing);
   }, [filterSearch]);
+
   useEffect(() => {
     const list_checkbox = [
       "All",
@@ -55,66 +52,66 @@ function App() {
       if (index > 3 && ok) checker_list2.push(list_checkbox[index]);
       return null;
     });
-
+    let listing;
     if (checker_list2.length === 0) {
       if (checker_list.length === 0 || checker_list.includes("All")) {
         listing =
-          hackathons_list > 0 &&
-          hackathons_list.filter((filterlist) => {
-            return (
-              filterlist.title
-                .substring(0, filterSearch.length)
-                .toLowerCase() === filterSearch.toLowerCase()
-            );
-          });
+          hackathons_list ?
+            hackathons_list.filter((filterlist) => {
+              return (
+                filterlist.title
+                  .substring(0, filterSearch.length)
+                  .toLowerCase() === filterSearch.toLowerCase()
+              );
+            }) : [];
       } else {
         listing =
-          hackathons_list &&
-          hackathons_list.filter((filterlist) => {
-            return (
-              filterlist.title
-                .substring(0, filterSearch.length)
-                .toLowerCase() === filterSearch.toLowerCase() &&
-              checker_list.includes(
-                dayjs().unix() - dayjs(filterlist.start).unix() < 0
-                  ? "Upcoming"
-                  : dayjs().unix() - dayjs(filterlist.end).unix() < 0
-                  ? "Active"
-                  : "Past"
-              )
-            );
-          });
+          hackathons_list ?
+            hackathons_list.filter((filterlist) => {
+              return (
+                filterlist.title
+                  .substring(0, filterSearch.length)
+                  .toLowerCase() === filterSearch.toLowerCase() &&
+                checker_list.includes(
+                  dayjs().unix() - dayjs(filterlist.start).unix() < 0
+                    ? "Upcoming"
+                    : dayjs().unix() - dayjs(filterlist.end).unix() < 0
+                      ? "Active"
+                      : "Past"
+                )
+              );
+            }) : [];
       }
     } else {
       if (checker_list.length === 0 || checker_list.includes("All")) {
         listing =
-          hackathons_list &&
-          hackathons_list.filter((filterlist) => {
-            return (
-              filterlist.title
-                .substring(0, filterSearch.length)
-                .toLowerCase() === filterSearch.toLowerCase() &&
-              checker_list2.includes(filterlist.difficulty)
-            );
-          });
+          hackathons_list ?
+            hackathons_list.filter((filterlist) => {
+              return (
+                filterlist.title
+                  .substring(0, filterSearch.length)
+                  .toLowerCase() === filterSearch.toLowerCase() &&
+                checker_list2.includes(filterlist.difficulty)
+              );
+            }) : [];
       } else {
         listing =
-          hackathons_list &&
-          hackathons_list.filter((filterlist) => {
-            return (
-              filterlist.title
-                .substring(0, filterSearch.length)
-                .toLowerCase() === filterSearch.toLowerCase() &&
-              checker_list2.includes(filterlist.difficulty) &&
-              checker_list.includes(
-                dayjs().unix() - dayjs(filterlist.start).unix() < 0
-                  ? "Upcoming"
-                  : dayjs().unix() - dayjs(filterlist.end).unix() < 0
-                  ? "Active"
-                  : "Past"
-              )
-            );
-          });
+          hackathons_list ?
+            hackathons_list.filter((filterlist) => {
+              return (
+                filterlist.title
+                  .substring(0, filterSearch.length)
+                  .toLowerCase() === filterSearch.toLowerCase() &&
+                checker_list2.includes(filterlist.difficulty) &&
+                checker_list.includes(
+                  dayjs().unix() - dayjs(filterlist.start).unix() < 0
+                    ? "Upcoming"
+                    : dayjs().unix() - dayjs(filterlist.end).unix() < 0
+                      ? "Active"
+                      : "Past"
+                )
+              );
+            }) : [];
       }
     }
     setSearchedData(listing);
@@ -129,7 +126,7 @@ function App() {
       index === position ? !item : item
     );
     setCheckedState(updatedCheckedState);
-  };  
+  };
   return (
     <Router>
       <div className="base">
@@ -152,7 +149,7 @@ function App() {
           <Route path="/Createchallenge:id" element={<CreateChallenge />} />
           <Route
             path="/Createchallenge/:id"
-            element={<CreateChallenge/>}
+            element={<CreateChallenge />}
           />
           <Route
             path="/HackathonDetails/:id"
